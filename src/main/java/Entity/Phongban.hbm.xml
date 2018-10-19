@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 20, 2018 1:24:35 AM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="Entity.Phongban" table="phongban" catalog="quanlythanhtichabc" optimistic-lock="version">
+        <id name="maphong" type="string">
+            <column name="maphong" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="tenphong" type="string">
+            <column name="tenphong" length="100" not-null="true" />
+        </property>
+        <set name="nhanviens" table="nhanvien" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="maphongban" length="2" />
+            </key>
+            <one-to-many class="Entity.Nhanvien" />
+        </set>
+        <set name="thanhtichkyluats" table="thanhtichkyluat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="maphongb" length="2" />
+            </key>
+            <one-to-many class="Entity.Thanhtichkyluat" />
+        </set>
+    </class>
+</hibernate-mapping>

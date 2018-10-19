@@ -13,8 +13,8 @@
         <property name="hibernate.search.autoregister_listeners">false</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
         <property name="hibernate.validator.autoregister_listeners">false</property>
-        <mapping class="Entity.Nhanvien" />
-        <mapping class="Entity.Phongban" />
-        <mapping class="Entity.Thanhtichkyluat" />
+		<mapping class="Entity.Thanhtichkyluat" />
+		<mapping class="Entity.Nhanvien" />
+		<mapping class="Entity.Phongban" />
     </session-factory>
 </hibernate-configuration>

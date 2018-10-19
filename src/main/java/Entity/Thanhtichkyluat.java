@@ -1,5 +1,5 @@
 package Entity;
-// Generated Oct 19, 2018 5:20:48 PM by Hibernate Tools 4.3.1.Final
+// Generated Oct 20, 2018 1:24:35 AM by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -21,6 +21,10 @@ import javax.persistence.TemporalType;
 @Table(name = "thanhtichkyluat", catalog = "quanlythanhtichabc")
 public class Thanhtichkyluat implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -207758885898390259L;
 	private Integer matt;
 	private Nhanvien nhanvien;
 	private Phongban phongban;

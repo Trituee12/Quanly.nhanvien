@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 20, 2018 1:24:35 AM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="Entity.Thanhtichkyluat" table="thanhtichkyluat" catalog="quanlythanhtichabc" optimistic-lock="version">
+        <id name="matt" type="java.lang.Integer">
+            <column name="matt" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="nhanvien" class="Entity.Nhanvien" fetch="select">
+            <column name="manhanvien" length="5" />
+        </many-to-one>
+        <many-to-one name="phongban" class="Entity.Phongban" fetch="select">
+            <column name="maphongb" length="2" />
+        </many-to-one>
+        <property name="loai" type="java.lang.Integer">
+            <column name="loai" />
+        </property>
+        <property name="lydo" type="string">
+            <column name="lydo" length="10" />
+        </property>
+        <property name="ngayghinhan" type="timestamp">
+            <column name="ngayghinhan" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

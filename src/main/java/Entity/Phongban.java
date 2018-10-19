@@ -1,5 +1,5 @@
 package Entity;
-// Generated Oct 19, 2018 5:20:48 PM by Hibernate Tools 4.3.1.Final
+// Generated Oct 20, 2018 1:24:35 AM by Hibernate Tools 4.3.1.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,6 +17,10 @@ import javax.persistence.Table;
 @Table(name = "phongban", catalog = "quanlythanhtichabc")
 public class Phongban implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9214142880752724994L;
 	private String maphong;
 	private String tenphong;
 	private Set<Nhanvien> nhanviens = new HashSet<Nhanvien>(0);

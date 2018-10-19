@@ -12,11 +12,13 @@
 	<context:annotation-config />
 	<context:component-scan base-package="Controller" />
 	<mvc:annotation-driven />
-	<mvc:resources mapping="assets/**" location="assets/*" />
+	<mvc:resources mapping="assets/**" location="assets/" />
 	<!-- adding view resolver to show jsp's on browser -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/page" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<bean id="loginModel" class="Model.NhanvienModel" />
+<bean id="loginService" class="Service.loginService" />
 </beans>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 20, 2018 1:24:35 AM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="Entity.Nhanvien" table="nhanvien" catalog="quanlythanhtichabc" optimistic-lock="version">
+        <id name="manv" type="string">
+            <column name="manv" length="5" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="phongban" class="Entity.Phongban" fetch="select">
+            <column name="maphongban" length="2" />
+        </many-to-one>
+        <property name="hoten" type="string">
+            <column name="hoten" length="500" />
+        </property>
+        <property name="gioitinh" type="string">
+            <column name="gioitinh" length="4" />
+        </property>
+        <property name="ngaysinh" type="date">
+            <column name="ngaysinh" length="10" />
+        </property>
+        <property name="luong" type="java.lang.Integer">
+            <column name="luong" />
+        </property>
+        <property name="capdo" type="java.lang.Integer">
+            <column name="capdo" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="dienthoai" type="string">
+            <column name="dienthoai" length="11" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="100" />
+        </property>
+        <property name="loaitk" type="string">
+            <column name="loaitk" length="2" />
+        </property>
+        <property name="tenhinh" type="string">
+            <column name="tenhinh" length="200" />
+        </property>
+        <property name="thoigianthem" type="timestamp">
+            <column name="thoigianthem" length="19" not-null="true" />
+        </property>
+        <set name="thanhtichkyluats" table="thanhtichkyluat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="manhanvien" length="5" />
+            </key>
+            <one-to-many class="Entity.Thanhtichkyluat" />
+        </set>
+    </class>
+</hibernate-mapping>
